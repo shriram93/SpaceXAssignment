@@ -1,0 +1,32 @@
+.launch-filter {
+  background: #fff;
+  padding: 8px;
+  overflow: auto;
+  height: 100%;
+  &__content {
+    padding: 8px;
+  }
+  &__header {
+    text-align: center;
+    border-bottom: 1.5px solid #d1cecf;
+    margin: 4px 16px;
+    margin-top: 0;
+    &:not(:first-child) {
+        margin-top: 4px;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+      width: 50%;
+      margin: 4px 0;
+      &:nth-child(odd) {
+        padding-right: 16px;
+      }
+      &:nth-child(even) {
+        padding-left: 16px;
+      }
+    }
+  }
+}

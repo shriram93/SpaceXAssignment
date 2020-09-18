@@ -1,0 +1,13 @@
+.app {
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: auto;
+  height: 100%;
+  &__content {
+    padding-left: 8px;
+    flex: 1;
+    overflow-y: auto;
+  }
+}

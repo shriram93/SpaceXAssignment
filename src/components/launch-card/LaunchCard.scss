@@ -1,0 +1,37 @@
+.launch-card {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  display: inline-block;
+  &__image {
+    img {
+        width: 100%;
+        max-width: 125px;
+    }
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+  }
+  &__name {
+    color: #474f94;
+    font-weight: 600;
+    margin: 16px 0;
+  }
+  &__data {
+    margin: 8px 0;
+    &__label {
+      font-weight: 600;
+      color: #000;
+    }
+    &__value {
+      color: #474f94;
+      ul {
+        margin-left: 30px;
+      }
+    }
+  }
+}

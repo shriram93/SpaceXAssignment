@@ -1,0 +1,13 @@
+.toggle-button {
+  padding: 4px;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background: #c5e09b;
+  border: none;
+  cursor: pointer;
+  &--selected {
+    background: #7bbb27;
+  }
+}
