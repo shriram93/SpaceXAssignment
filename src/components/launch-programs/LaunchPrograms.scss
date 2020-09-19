@@ -8,6 +8,13 @@
       padding: 8px;
       width: 100%;
       display: inline-block;
+      &--dummy {
+        height: 30vh;
+        display: none;
+      }
+      &--dummy:last-child {
+        display: block;
+      }
     }
   }
 }
@@ -23,6 +30,9 @@
       overflow-y: scroll;
       &__card {
         width: 50%;
+        &--dummy:nth-child(odd) {
+          display: block;
+        }
       }
     }
   }
@@ -36,6 +46,9 @@
     &__cards {
       &__card {
         width: 25%;
+        &--dummy {
+          display: block;
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import SpaceXLaunchApi from '../../apis/SpaceXLaunch';
 import LaunchCard from '../launch-card/LaunchCard';
 import LaunchFilter from '../launch-filter/LaunchFilter';
@@ -24,7 +24,7 @@ const formatLaunchPrograms = (launchPrograms) => {
 }
 
 
-const LaunchPrograms = ({location}) => {
+const LaunchPrograms = ({ location }) => {
     const [launchPrograms, setLaunchPrograms] = useState([]);
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const LaunchPrograms = ({location}) => {
         (async () => {
             const result = await SpaceXLaunchApi.get('/v3/launches', {
                 params: {
-                    limit: 8,
+                    limit: 100,
                     ...parsedQueryString
                 }
             });
@@ -51,6 +51,14 @@ const LaunchPrograms = ({location}) => {
                         <LaunchCard {...launchProgram} />
                     </div>
                 ))}
+                {launchPrograms.length < 5 && (
+                    <Fragment>
+                        <div className="launch-program__cards__card launch-program__cards__card--dummy" />
+                        <div className="launch-program__cards__card launch-program__cards__card--dummy" />
+                        <div className="launch-program__cards__card launch-program__cards__card--dummy" />
+                        <div className="launch-program__cards__card launch-program__cards__card--dummy" />
+                    </Fragment>
+                )}
             </div>
         </div>
     );
